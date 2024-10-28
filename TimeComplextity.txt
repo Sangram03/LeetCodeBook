@@ -1,0 +1,143 @@
+How do you know if one algorithm is faster or takes more space than the other?
+
+In computer science, we analyze the efficiency of algorithms using something called Algorithmic Complexity.
+
+It helps us analyze how efficient our code is, both in terms of how long it takes to run (time) and how much memory it uses (space).
+
+In this article, we will break down the key aspects of algorithmic complexity, including time vs. space complexity, how to calculate complexity, asymptotic notation, and common runtimes.
+
+Time Complexity vs. Space Complexity
+Time Complexity measures the amount of time an algorithm takes to complete as a function of the length of the input. It's an essential factor in determining how well an algorithm scales as the size of the input grows.
+
+Space Complexity measures the amount of memory an algorithm uses as a function of the length of the input. It considers both the memory needed to store the input and any additional memory required during the execution of the algorithm.
+
+Both time and space complexities are crucial because they help us understand the efficiency of an algorithm and make informed decisions about which algorithm to use based on the constraints of the problem.
+
+Calculating Complexity
+To calculate complexity, we typically use the following steps:
+
+Identify the input size: Determine the parameter that affects the algorithm's performance the most (e.g., array size, number of nodes).
+
+Count the operations: Calculate the number of operations performed in terms of the input size.
+
+Simplify the expression: Remove lower-order terms and ignore constants.
+
+To calculate the complexity of an algorithm, we focus on the dominant term in the algorithm's runtime expression. The dominant term is the one that grows the fastest as the input size increases. We ignore constants and lower-order terms because they become insignificant as the input size becomes very large.
+
+Example: Consider an algorithm with a runtime of 5n^2 + 3n + 2. The dominant term here is n^2, so we say that the algorithm has a time complexity of O(n^2) (more on this notation in the next section).
+
+Example: Calculating Time Complexity
+Consider a simple algorithm that sums all the elements in an array:
+
+
+Here, the time complexity can be calculated as follows:
+
+The loop runs n times (where n is the length of the array).
+
+Inside the loop, a constant-time addition operation is performed.
+
+Thus, the time complexity is O(n), meaning it scales linearly with the input size.
+
+Example: Calculating Space Complexity
+Using the same sum algorithm:
+
+The space used by the algorithm consists of the input array and a few integer variables.
+
+The space for the input array is O(n).
+
+The space for the variables is O(1) (constant space).
+
+Thus, the space complexity is O(n).
+
+Asymptotic Notation
+Asymptotic notation provides a way to describe the complexity of an algorithm in terms of its behavior as the input size grows. The three most common asymptotic notations are:
+
+1. Big O Notation (O)
+Big O notation describes the upper bound of an algorithm's time or space complexity. It provides a worst-case scenario, showing the maximum time or space an algorithm will require.
+
+Example: Linear Search
+
+Consider a linear search algorithm that searches for a target value in an array:
+
+
+Best Case: The target is the first element, O(1).
+
+Worst Case: The target is the last element or not present, O(n).
+
+Since Big O focuses on the worst case, the time complexity of linear search is O(n).
+
+2. Omega Notation (Ω)
+Omega notation describes the lower bound of an algorithm's time or space complexity. It provides a best-case scenario, showing the minimum time or space an algorithm will require.
+
+Using the same linear search example:
+
+Best Case: The target is the first element, Ω(1).
+
+Worst Case: The target is the last element or not present, Ω(n).
+
+The best-case time complexity is Ω(1).
+
+3. Theta Notation (Θ)
+Theta notation describes the exact bound of an algorithm's time or space complexity. It provides both the upper and lower bounds, showing the average-case scenario.
+
+For linear search, if we consider the average case where the target is equally likely to be at any position:
+
+Average Case: On average, the target will be found halfway through the array, Θ(n).
+
+The average-case time complexity is Θ(n).
+
+Subscribe to receive new articles every week.
+
+Type your email...
+Subscribe
+Common Runtimes
+
+O(1): Constant time
+The algorithm takes a constant amount of time regardless of the input size. The algorithm's running time is independent of the input size.
+
+Example: Accessing an element in an array by index.
+
+
+O(log n): Logarithmic time
+The algorithm's runtime grows logarithmically with the input size.
+
+Example: Binary search in a sorted array.
+
+
+O(n): Linear time
+The algorithm's runtime grows linearly with the input size.
+
+Example: Finding the maximum element in an unsorted array.
+
+
+O(n log n): Log-linear time
+Common in efficient sorting algorithms like merge sort and quicksort.
+
+
+O(n^2): Quadratic time
+The running time grows quadratically with the input size.
+
+Example: Simple sorting algorithms like bubble sort, insertion sort.
+
+
+O(2^n): Exponential time
+The running time doubles with each additional element in the input, typical in algorithms that solve problems by brute force.
+
+Example: Recursive algorithms for the Fibonacci sequence.
+
+
+O(n!): Factorial time
+The running time grows factorially with the input size.
+
+Example: Algorithms that generate all permutations of a string.
+
+
+Key Takeaways:
+Algorithmic complexity helps you evaluate and optimize your code's efficiency.
+
+Time complexity tells you how the runtime scales with input size, and space complexity focuses on memory usage.
+
+Big O notation provides a standardized way to express complexity.
+
+By understanding complexity, you can make informed decisions when choosing algorithms and data structures for your programs.
+
